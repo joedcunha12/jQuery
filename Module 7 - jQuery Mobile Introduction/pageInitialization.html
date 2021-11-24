@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Title</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    
+    
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    </head>
+    <body>
+    
+        
+        <script>
+            
+var post = $.ajax({
+    url: "https://api.jsonbin.io/b/6075c35a0ed6f819beab5b61/1/",
+    data: {json: JSON.stringify({firstName: "Sai", lastName: "Edureka"})} ,
+    type: "POST"
+});
+
+post.done(function(p){
+    alert(p.firstName +  " saved.");
+});
+
+post.fail(function(){
+    alert("error!");
+});
+
+post.always(function(){
+alert("Operation Completed");
+});
+
+
+        </script>
+        
+    </body>
+    </html>

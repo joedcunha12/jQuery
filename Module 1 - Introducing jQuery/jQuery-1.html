@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Demo</title>
+    <Style>
+        #ready {
+            font-size: 20px;
+        }
+    </Style>
+</head>
+<body>
+<!--
+    <h1>Heading of the Page</h1>
+    <div id="ready"></div> -->
+
+    <a href="https://www.google.com/" target="_blank">Google blank</a>
+    <a href="www.yahoo.com/" target="_self">google self</a>
+
+    <p>List 1:</p>
+    
+    <ul id="item-list">
+        <li id="first-li">
+            coffee
+
+            <a href="https://www.google.com/">Google</a>
+
+           <div id="ufo">
+                <a href="https://www.google.com/">Google</a>
+             </div>
+
+        </li>
+        <li>milk</li>
+        <li>tea</li>
+    </ul>
+
+    <button>Click me</button>
+
+    <script src="bootsrap/bootstrap-3.3.7-dist/jquery-3.6.0.min.js"></script>
+
+    <script>
+        //console.log('line no. 17!!!')
+
+        $(document).ready(function() {
+            $('#ready').text('My webpage is ready!!').css('color', 'red').css('font-weight', 700).fadeIn(5000);
+
+            $('button').click(function() {
+               // $('#item-list').find('a').css('color','red');
+               //$('#first-li').find('a').css('color','red');
+              // $('#first-li').children('a').css('color','red');
+
+             //  $('#ufo').closest('li').css('color','red');
+
+            // $('#ufo').parent().css('border','1px solid black');
+
+           // $('#first-li').next().css('border','1px solid black');
+
+           // $('#item-list li:last').prev().css('border','1px solid black');
+            
+         //  $('#item-list li:last').siblings().css('border','1px solid black');
+
+          // $('li').first().css('border','1px solid black');
+
+           $('li').last().css('border','1px solid black');
+            })
+        });
+       
+       // $('h1').text('Change the Heading');
+
+       // $("a[target='_self']").css('color','green')
+
+       // $("a[href='www.yahoo.com/']").text('yahoo!');
+
+      //  $('#item-list > li').css('color','brown');
+       // console.log('line no 22!!!')
+    </script>
+</body>
+</html>

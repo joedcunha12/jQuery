@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom (1)/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom (1)/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom (1)/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
+
+
+</head>
+<body>
+
+    <label for="autocomplete">Google Search</label>
+    <input id="autocomplete">
+
+    <script src="jquery-ui-1.12.1.custom (1)/jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom (1)/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+    <script>
+         
+
+         var tags = ["C++", "java","php","Coldfusion","javasCript","asp","ruby"];
+
+         $('#autocomplete').autocomplete({
+         /*    source: function(request, response) {
+                 var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term),"i");
+                 response($.grep(tags,function(item){
+                   return matcher.test(item);
+                 }) );
+             } */
+
+             source: tags
+         });
+
+    
+
+    </script>
+    
+</body>
+</html>

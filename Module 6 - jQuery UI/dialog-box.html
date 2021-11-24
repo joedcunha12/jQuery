@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom (1)/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom (1)/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom (1)/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
+
+
+</head>
+<body>
+
+    <button id="opener"> Open the dialog</button>
+    <div id="dialog" title="Dialog Title">I'm a dialog</div>
+
+   
+
+    <script src="jquery-ui-1.12.1.custom (1)/jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom (1)/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+    <script>
+         
+  $('#dialog').dialog({autoOpen: false, modal:true});
+    
+  $("#opener").click(function() {
+      $('#dialog').dialog( "open" );
+  });
+
+    </script>
+    
+</body>
+</html>

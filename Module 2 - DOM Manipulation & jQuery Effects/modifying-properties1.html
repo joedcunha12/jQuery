@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 2</title>
+    <style>
+        .selected {
+            text-decoration: underline;
+        }
+
+        .golden-link {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+
+    <a target="_blank" class="color-box after" href="https://www.google.com/"> Google </a>
+
+    <a target="_self" href="https://login.yahoo.com/"> Yahoo! </a>
+
+    
+    <button id="linkfix"> Fix the links</button>
+
+    <script src="bootsrap/bootstrap-3.3.7-dist/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+          $('#linkfix').click(function() {
+                 // $('a').removeAttr('target');
+                 
+          //  if( $('a').hasClass('after') == true ) {
+               // $('.after').removeClass('after').addClass('golden-link')
+
+               $('a').toggleClass('after').toggleClass('golden-link').toggleClass('color-box');
+         
+          });
+
+        });
+    </script>
+</body>
+</html>

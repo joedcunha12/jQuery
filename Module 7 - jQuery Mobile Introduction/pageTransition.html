@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Title</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    
+    
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        body, html {
+    height:100%;
+    overflow:hidden;
+}
+body {
+    padding:10px;
+    background:rgba(0,0,0,.1);
+    font:12px Arial, Verdana;
+}
+textarea {
+    width:100%;
+    height:80%;
+    font:11px "Consolas", "Courier New", Courier;
+}
+p {
+    padding:0 0 10px 0;
+}
+    </style>
+    
+    </head>
+    <body>
+    
+        <p>Result for : http://api.flickr.com/services/feeds/photos_public.gne</p>
+<p>First imgage in the list is : <b></b></p>
+<textarea>Waiting Flickr result...</textarea>
+
+
+<script>
+    $(function() {
+    
+    var fetchTweets = function(keyword) {
+        var dfd = new $.Deferred(); // Create Deferred
+        $.ajax({
+            type: 'GET',
+            dataType: 'jsonp',
+            url: 'http://api.flickr.com/services/feeds/photos_public.gne?tags='+ keyword + '&tagmode=any&format=json&jsoncallback=?',
+            success: function(data) {
+                console.log(data);
+                data = $.map(data.items, function(obj, index) {
+                    return {
+                        image: obj.media.m
+                    };
+                });
+                dfd.resolve(data); // Resolve the promise, give back the response (data)
+            }
+        });
+        return dfd.promise(); // Give back the promise, waiting for resolve
+    };
+    
+    // Now, our "fetchTweets()" function works with jQuery Deferred pattern...
+    $.when(fetchTweets('html5')).done(function(data) {
+        $('textarea').val(JSON.stringify(data, null, 4));
+        $('b').html(data[0].image);
+    });
+    
+});
+</script>
+
+        
+    </body>
+    </html>

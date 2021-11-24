@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        
+        
+    </div>
+
+    <button>click me </button>
+
+    <script src="bootsrap/bootstrap-3.3.7-dist/jquery-3.6.0.min.js"></script>
+    
+    <script>
+       
+       var userDetails ;
+
+
+       function ajax (options) {
+
+         var request = $.Deferred() ;
+
+         request.resolve(options.success);
+
+         request.reject(options.error);
+
+         return request.promise ;
+       }
+
+
+       $('button').click(function() {
+
+         var request = 
+           $.ajax ({
+            url:'https://api.jsonbin.io/b/6075c35a0ed6f819beab5b61',
+            type: 'GET',
+            dataType: 'json',
+            timeout: 2500,
+            success: function(result) {
+               userDetails = result ;
+                console.log('complete with success and data', result);
+            },
+
+            error : function (result) {
+                console.log('complete with error'); 
+                alert('failed to load');
+            },
+
+            complete: function () { 
+            console.log('complete');
+             
+               }
+           });
+           
+           request.done(
+              function () {
+               console.log(userDetails); 
+              }
+           );
+           
+          // $.deferred.when($.post('/song', {id:1}),$.post('/song', {id:2}),$.post('/song', {id:3})).then(showSongs) ;
+
+//           console.log(userDetails);
+        /*   $.get('https://api.jsonbin.io/b/6075c35a0ed6f819beab5b61', {} ,
+         function(response) {
+            console.log('Request is done');
+         } ,
+         'json'
+         ); */
+
+       /*   $.getJSON('https://api.jsonbin.io/b/6075c35a0ed6f819beab5b61', {} ,
+         function() {
+            console.log('Request is done');
+         } 
+        
+         ); */
+/*
+         $.post('https://api.jsonbin.io/b/6075c23dee971419c4d8c788/1', {} ,
+         function() {
+            console.log('Request is done');
+         }, 'json' ); */
+
+         $('.container').load('test.html');
+         
+       });
+
+    </script>
+</body>
+</html>

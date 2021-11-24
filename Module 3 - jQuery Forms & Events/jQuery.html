@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <P style="border: 1px solid black; padding: 10px;" id="bind-example">click me</P>
+
+        <div id="colorbox" style="width:300px; height:300px; background-color:red; border:1px solid black;">
+           <span style="color:white; font-size:16px;" id="message"></span>
+    </div>
+
+    <a id="target" href="https://www.google.com/" target="_blank">Google</a>
+    </div>
+    
+    <script src="bootsrap/bootstrap-3.3.7-dist/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          /*  $('#bind-example').bind('mouseenter ', function () {
+                console.log('Entering your world',$(this).text());
+            });
+
+            $('#bind-example').bind(' mouseleave', function () {
+                console.log('Leaving your world');
+
+                $(this).unbind();
+            });
+
+            $('#colorbox').on({
+                mouseenter: function() {
+                    $('#message').text(' entered the box');
+                },
+                mouseleave: function () {
+                    $('#message').text(' left the box');   
+                }
+            }); */
+
+         /*   $('#colorbox').on('click', function (event) {
+                console.log(event.type);
+                console.log(event.which);
+                console.log(event.target);
+                console.log(event.pageX);
+                console.log(event.pageY);
+            });  */ 
+            
+          //  $('#colorbox').on('click', function (event) {
+             //   console.log(event);
+       // });
+
+     //   $('#colorbox').on('mouseenter mouseleave', function (event) {
+       //     console.log('ran one time');
+           // $(this).off();
+        //   $('#target').trigger('click');
+       // });
+
+      //  $('#target').on('click', function(event) {
+         //   event.preventDefault();
+       //  console.log('link is trigged');
+     
+       });
+
+       $('#colorbox').on('customEvents', function (event) {
+        console.log('custom events called');
+       });
+
+       $('#target').on('click', function(event) {
+         //   event.preventDefault();
+         console.log('link is trigged');
+         $('#colorbox').trigger('customEvents');
+
+       });
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="examples/css/styles.css" type="text/css" media="all">
+    
+</head>
+<body>
+    
+    <div class="box_skitter box_skitter_large">
+        <ul>
+        <li><a href="#cube"><img src="examples/images/example/001.jpg" class="cube" /></a>
+        <div class="label_text">
+        <p>cube</p>
+        </div>
+        </li>
+        <li><a href="#cubeRandom"><img src="examples/images/example/002.jpg" class="cubeRandom" /></a>
+        <div class="label_text">
+        <p>cubeRandom</p>
+        </div>
+        </li>
+        <li><a href="#block"><img src="examples/images/example/003.jpg" class="block" /></a>
+        <div class="label_text">
+        <p>block</p>
+        </div>
+        </li>
+        <li><a href="#cubeStop"><img src="examples/images/example/004.jpg" class="cubeStop" /></a>
+        <div class="label_text">
+        <p>cubeStop</p>
+        </div>
+        </li>
+        </ul>
+        </div>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="dist/jquery.skitter.min.js" type="text/javascript" language="javascript"></script>
+<script src="examples/js/jquery.easing.1.3.js" type="text/javascript" language="javascript"></script>
+
+
+        <script>
+
+            $(document).ready(function() {
+  $('.box_skitter_large').skitter({
+    theme: 'clean', // minimalist, round, clean, square
+    numbers_align: 'center', // Alignment of numbers/dots/thumbs
+    progressbar: true, // Displays progress bar
+    dots: true, // <a href="https://www.jqueryscript.net/tags.php?/Navigation/">Navigation</a> with dots
+    preview: true // Preview with dots
+  });
+});
+
+$('.box_skitter_large').skitter({
+
+// <a href="https://www.jqueryscript.net/animation/">Animation</a> velocity
+velocity: 1,
+
+// Interval between transitions
+interval: 2500, 
+
+// Default animation
+animation: '',
+
+// Numbers display
+numbers: false,
+
+// Navigation display
+navigation: false,
+
+// Label display
+label: true,
+
+// Easing default
+easing_default: '',
+
+// The skitters box (internal)
+skitter_box: null,
+
+// @deprecated
+time_interval: null,
+
+// Image link (internal)
+images_links: null,
+
+// Actual image (internal)
+image_atual: null,
+
+// Actual link (internal)
+link_atual: null,
+
+// Actual label (internal)
+label_atual: null,
+
+// Actual target (internal)
+target_atual: '_self',
+
+// Skitter width (internal)
+width_skitter: null,
+
+// Skitter height (internal)
+height_skitter: null,
+
+// Image number loop (internal)
+image_i: 1,
+
+// Is animating (internal)
+is_animating: false,
+
+// Is hover skitter_box (internal)
+is_hover_skitter_box: false,
+
+// Smart randomly (internal)
+random_ia: null,
+
+// Randomly sliders
+show_randomly: false,
+
+// Navigation with thumbs
+thumbs: false,
+
+// Hide numbers and navigation
+hide_tools: false,
+
+// Fullscreen mode
+fullscreen: false,
+
+// Loading data from XML file
+xml: false,
+
+// Navigation with dots
+dots: true,
+
+// Final opacity of elements in hide_tools
+opacity_elements: 0.75,
+
+// Interval animation hover elements hide_tools 
+interval_in_elements: 200, 
+
+// Interval animation out elements hide_tools
+interval_out_elements: 300, 
+
+// Onload Callback
+onLoad: null,
+
+// Function call to change image
+imageSwitched: null,
+
+// @deprecated
+max_number_height: 20,
+
+// Alignment of numbers/dots/thumbs
+numbers_align: 'center',
+
+// Preview with dots
+preview: false,
+
+// Focus slideshow
+focus: false,
+
+// Focus active (internal)
+foucs_active: false,
+
+// Option play/pause manually
+controls: false,
+
+// Displays progress bar
+progressbar: false,
+
+// CSS progress bar
+progressbar_css: {},
+
+// Is paused (internal)
+is_paused: false,
+
+// Is blur (internal)
+is_blur: false,
+
+// Is paused time (internal)
+is_paused_time: false,
+
+// Time start (internal)
+time_start: 0,
+
+// Elapsed time (internal)
+elapsedTime: 0,
+
+// Stop animation to move mouse over it.
+stop_over: true,
+
+// Enable navigation keys
+enable_navigation_keys: false,
+
+// Specific animations
+with_animations: [],
+
+// Function call to go over the navigation buttons
+// mouseOverButton: function() { $(this).stop().animate({opacity:0.5}, 200); }, 
+mouseOverButton: null, 
+
+// Function call to go out the navigation buttons
+// mouseOutButton: function() { $(this).stop().animate({opacity:1}, 200); }, 
+mouseOutButton: null, 
+
+// Sets whether the slideshow will start automatically
+auto_play: true, 
+
+// Label animation type
+label_animation: 'slideUp', 
+
+// Theme
+theme: null, 
+
+responsive: {
+  small: {
+    animation: 'fade',
+    max_width: 768
+  },
+  medium: {
+    max_width: 1024
+  }
+}
+
+});
+
+
+        </script>
+</body>
+</html>

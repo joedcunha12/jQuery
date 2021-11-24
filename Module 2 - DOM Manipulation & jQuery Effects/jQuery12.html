@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 2</title>
+    <style>
+        #explaination {
+            width: 100px;
+            height: 40px;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+
+        .color-box {
+            width: 250px;
+            height: 250px;
+            border: 1px solid black ;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        .container {
+
+        }
+
+        .after {
+            background-color: red;
+        }
+
+        .before {
+            background-color: blue;
+        }
+
+        .append {
+            background-color: green;
+        }
+
+        .prepend {
+            background-color: cyan;
+        }
+
+        .attached {
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+
+    <div >
+     
+        <div class="color-box after">
+        After
+        </div> 
+
+        <div class="color-box before">
+            Before
+        </div>
+    
+        <div class="color-box append">
+            Append
+        </div> 
+       
+        <div class="color-box prepend">
+            Prepend
+        </div>
+
+        <br><br>
+<!--
+        <button id="toggle">toggle Boxes </button> 
+        
+        <button id="showBoxes">Show Boxes </button>  <br> <br>
+
+        <button id="hideBoxes">Hide Boxes</button> -->
+
+        <button id="animate">Animate Boxes </button>
+    </div>
+
+    
+    
+
+    <script src="bootsrap/bootstrap-3.3.7-dist/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('#hideBoxes').click(function(){
+           //   $('.color-box').hide(1000);
+            //  $('.color-box').fadeOut(1000);
+             // $('.color-box').fadeTo(2000,0.2);
+             $('.color-box').slideUp(500);
+            })
+
+            $('#showBoxes').click(function(){
+              //  $('.color-box').show(1000);
+              //  $('.color-box').fadeIn(1000);
+             // $('.color-box').fadeTo(2000,1)
+             $('.color-box').slideDown(500);
+            })
+
+            $('#toggle').click(function(){
+              $('.color-box').toggle(1000);
+            })
+
+            $('#animate').click(function(){
+              $('.color-box').animate({
+                  width: '300px',
+                 'margin-top': '40px',
+                 'opacity': 0.5
+              }, 200);
+              
+            })
+        })
+    </script>
+</body>
+</html>

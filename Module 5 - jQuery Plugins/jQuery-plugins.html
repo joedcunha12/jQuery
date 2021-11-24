@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugins</title>
+
+    <link rel="stylesheet" href="alertify.js-0.3.11/themes/alertify.bootstrap.css">
+    <link rel="stylesheet" href="alertify.js-0.3.11/themes/alertify.core.css">
+    <link rel="stylesheet" href="alertify.js-0.3.11/themes/alertify.default.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+   <h1>
+       My First h1 tag
+   </h1>
+
+   <h1>
+    My third h1 tag
+</h1>
+
+<h1>
+    My fourth h1 tag
+</h1>
+
+    </div>
+
+    <button >Click Me</button>
+    
+
+    <script src="bootsrap/bootstrap-3.3.7-dist/jquery-3.6.0.min.js"></script>
+    <script src="alertify.js-0.3.11/src/alertify.js"></script>
+
+    <script>
+/*
+  alertify.confirm("How are you today?", function (e) {
+    if (e) {
+        // user clicked "ok"
+    } else {
+        // user clicked "cancel"
+    }
+});
+*/
+
+(function($) {
+   
+    $.fn.oneStyle = function (options, callback) {
+        var a = 3.12;
+
+      //  function calculateOpacity () {
+//
+       // }
+
+       console.log(callback);
+   
+        this.animate ({
+            fontSize: options.fontSize,
+            opacity: options.opacity
+        }, 1500);
+
+
+        var data = 123;
+
+        callback(data);
+
+    return this;
+};
+  //$.fn.oneStyle.calculateOpacity = function () {
+//
+//};
+
+})(jQuery) ;
+
+
+
+
+$('button').click(function(){
+    $('h1').oneStyle( {
+        fontSize: '12px',
+        opacity: 0.2
+    }, function(data) {
+        console.log('callback has been executed from inside onestyle');
+    
+    });
+});
+
+
+
+
+
+    </script>
+</body>
+</html>
